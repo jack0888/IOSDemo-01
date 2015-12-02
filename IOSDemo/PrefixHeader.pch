@@ -1,0 +1,51 @@
+//
+//  PrefixHeader.pch
+//  IOSDemo
+//
+//  Created by Jack on 15/11/26.
+//  Copyright © 2015年 UWO. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#define BASEURL             @"http://api.leyouss.com"
+#define IMAGE_URL           @"http://upload.leyouss.com"
+
+#define ADIMAGE             @"/home/flashImg"
+
+#endif /* PrefixHeader_pch */
+
+//获取设备的物理高度
+#define SCREEN_HEIGHT   ([UIScreen mainScreen].bounds.size.height)
+//获取设备的物理宽度
+#define SCREEN_WIDTH    ([UIScreen mainScreen].bounds.size.width)
+
+#pragma mark - 设备型号识别
+#define is_IOS_7 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
+
+#define ALERT_ERR_MSG(MSG) ([[[UIAlertView alloc] initWithTitle:@"提示" message:MSG delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil] show])
+
+#ifndef NDEBUG
+#define DebugLog(message, ...) NSLog(@"%s: " message, __PRETTY_FUNCTION__, ##__VA_ARGS__)
+#else
+#define DebugLog(message, ...)
+#endif
+
+#define RGBCOLOR(r, g, b)       [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
+#define RGBACOLOR(r, g, b, a)   [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
+
+//手机屏幕的尺寸
+#define iPhone4 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
+#define iPhone4s ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
+#define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+#define iPhone6 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
+#define iPhone6Plus ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size) : NO)
+//-------------------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------color---------------------------------------------------------
+#define BGGARYCOLOR [UIColor colorWithRed:0.878f green:0.878f blue:0.878f alpha:1.00f];
+#define LIGHTGARY   [UIColor colorWithRed:0.933f green:0.933f blue:0.933f alpha:1.00f];
